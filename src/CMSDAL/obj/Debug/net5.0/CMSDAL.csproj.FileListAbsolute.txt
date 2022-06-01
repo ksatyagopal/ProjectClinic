@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\bin\Debug\net5.0\CMSDAL.deps.json
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\bin\Debug\net5.0\CMSDAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\bin\Debug\net5.0\ref\CMSDAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\bin\Debug\net5.0\CMSDAL.pdb
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\ref\CMSDAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\CMSDAL\obj\Debug\net5.0\CMSDAL.pdb

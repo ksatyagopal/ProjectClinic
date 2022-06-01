@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\ClinicMSBAL.deps.json
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\ClinicMSBAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\ref\ClinicMSBAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\ClinicMSBAL.pdb
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\CMSDAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\bin\Debug\net5.0\CMSDAL.pdb
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.csproj.CopyComplete
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ref\ClinicMSBAL.dll
+C:\Users\Admin\Desktop\Eurofins\CaseStudy\ProjectClinic\src\ClinicMSBAL\obj\Debug\net5.0\ClinicMSBAL.pdb
