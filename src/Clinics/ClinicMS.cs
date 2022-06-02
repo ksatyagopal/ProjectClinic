@@ -49,20 +49,20 @@ namespace Clinics
                         Thread.Sleep(100);
                     }
                 }
-                Console.ForegroundColor = ConsoleColor.Blue;
-                string header = "Logging In";
+                
+                StringBuilder bld = new("Logging In");
                 for (int countdown1 = 1; countdown1 <= 10; countdown1++)
                 {
                     if(countdown1%2==0)
                     {
-                        header += "████";
+                        bld.Append("████");
                     }
                     else
                     {
-                        header += "   ";
+                        bld.Append("   ");
                     }
-                    Console.Title = header;
-                    Thread.Sleep(300);
+                    Console.Title = bld.ToString();
+                    Thread.Sleep(200);
                 }
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Login Successful...");
@@ -75,22 +75,26 @@ namespace Clinics
                 int choice;
                 do
                 {
-                    Console.WriteLine("You can select from the options below.");
+                    Console.WriteLine("\nYou can select from the options below.");
                     Thread.Sleep(100);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("  ______________________________________  \n");
-                    Console.WriteLine("|\t1.  View Doctors                 |");
+                    Console.WriteLine("  ________________________________________  \n");
+                    Console.WriteLine("|\t1.  View Doctors                   |");
                     Thread.Sleep(100);
-                    Console.WriteLine("|\t2.  Add Doctor                   |");
+                    Console.WriteLine("|\t2.  Add Doctor                     |");
                     Thread.Sleep(100);
-                    Console.WriteLine("|\t3.  Add Patient                  |");
+                    Console.WriteLine("|\t3.  Add Patient                    |");
                     Thread.Sleep(100);
-                    Console.WriteLine("|\t4.  Schedule Appointment         |");
+                    Console.WriteLine("|\t4.  Schedule Appointment           |");
                     Thread.Sleep(100);
-                    Console.WriteLine("|\t5.  Cancel Appointment           |");
+                    Console.WriteLine("|\t5.  Cancel Appointment             |");
                     Thread.Sleep(100);
-                    Console.WriteLine("|\t6.  LogOut                       |");
-                    Console.WriteLine("  ______________________________________  \n");
+                    Console.WriteLine("|\t6.  View Appointments of Patient   |");
+                    Thread.Sleep(100);
+                    Console.WriteLine("|\t7.  View Appointments of Doctor    |");
+                    Thread.Sleep(100);
+                    Console.WriteLine("|\t8.  LogOut                         |");
+                    Console.WriteLine("  ________________________________________  \n");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("---Your Choice---");
                     choice = Convert.ToInt32(Console.ReadLine());
@@ -105,7 +109,7 @@ namespace Clinics
                         switch (choice)
                         {
                             case 1:
-                                //View Doctors
+                                // View Doctors
                                 for (int countdown = 1; countdown < 6; countdown++)
                                 {
                                     Console.Write("Scanning");
@@ -137,11 +141,27 @@ namespace Clinics
                                 break;
 
                             case 2:
-                                //Add Doctor
+                                // Add Doctor
                                 Console.WriteLine("Enter Doctor First Name:");
                                 string firstName = Console.ReadLine();
+                                while (!firstName.All(char.IsLetter))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Special Characters or Digits Not Allowed in First Name");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("Enter Doctor First Name(Should Contain Only Letters):");
+                                    firstName = Console.ReadLine();
+                                }
                                 Console.WriteLine("Enter Doctor Last Name:");
                                 string lastName = Console.ReadLine();
+                                while (!lastName.All(char.IsLetter))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Special Characters or Digits Not Allowed in Last Name");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("Enter Doctor Last Name(Should Contain Only Letters):");
+                                    lastName = Console.ReadLine();
+                                }
                                 Console.WriteLine("\n1. Male\n2. Female\n3. Others\nSelect Doctor Gender:\n");
                                 genderselected = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("\n1. General\n2. Internal Medicine\n3. Pediatrics\n4. Orthopedics\n5. Ophthalmology\nSelect Doctor Specialization:\n");
@@ -154,7 +174,7 @@ namespace Clinics
                                 d = new Doctor();
                                 d = d.AddDoctorInDatabase(firstName, lastName, gender[genderselected - 1], specializations[specSelected - 1], vstart, vend);
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("Doctor details successfully added to the system.\nDoctor Details:");
+                                Console.WriteLine("\nDoctor details successfully added to the system.\nDoctor Details are:");
                                 Console.WriteLine("***********************************");
                                 Console.WriteLine("Doctor ID:                 " + d.DoctorID);
                                 Console.WriteLine("First Name:                " + d.FirstName);
@@ -167,17 +187,41 @@ namespace Clinics
                                 break;
 
                             case 3:
-                                //Add Patient
+                                // Add Patient
                                 Console.WriteLine("Enter Patient First Name:");
                                 string pfirstName = Console.ReadLine();
+                                while (!pfirstName.All(char.IsLetter))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Special Characters or Digits Not Allowed in First Name");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("Enter Patient First Name(Should Contain Only Letters):");
+                                    pfirstName = Console.ReadLine();
+                                }
                                 Console.WriteLine("Enter Patient Last Name:");
                                 string plastName = Console.ReadLine();
+                                while (!plastName.All(char.IsLetter))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Special Characters or Digits Not Allowed in Last Name");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("Enter Patient Last Name(Should Contain Only Letters):");
+                                    plastName = Console.ReadLine();
+                                }
                                 Console.WriteLine("\n1. Male\n2. Female\n3. Others\nSelect Patient Gender:");
                                 int pgenderselected = Convert.ToInt32(Console.ReadLine());
 
                                 Console.WriteLine("Enter patient age:");
                                 int page = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter patient Date Of Birth:");
+                                while(!(page>0 && page<=120))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Age Should lie between 1 and 120");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("Enter patient age(1-120):");
+                                    page = Convert.ToInt32(Console.ReadLine());
+                                }
+                                Console.WriteLine("Enter patient Date Of Birth(DD/MM/YYYY):");
                                 DateTime pdob = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
                                 p = new Patient();
@@ -187,7 +231,7 @@ namespace Clinics
                                                                  page,
                                                                  pdob);
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("Patient successfully added to the system.\nPatient Details:");
+                                Console.WriteLine("\nPatient successfully added to the system.\nPatient Details are:");
                                 Console.WriteLine("***********************************");
                                 Console.WriteLine("Patient ID:    " + p.PatientID);
                                 Console.WriteLine("First Name:    " + p.FirstName);
@@ -200,7 +244,7 @@ namespace Clinics
                                 break;
 
                             case 4:
-                                //Schedule Appointment
+                                // Schedule Appointment
                                 Console.WriteLine("Enter Patient ID:");
                                 int pid = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("\n1. General\n2. Internal Medicine\n3. Pediatrics\n4. Orthopedics\n5. Ophthalmology\nSelect Doctor Specialization:");
@@ -225,19 +269,19 @@ namespace Clinics
                                 Console.ForegroundColor = ConsoleColor.White;
                                 Console.WriteLine("\nEnter Doctor ID from Above:");
                                 int did = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter Visiting Date:");
+                                Console.WriteLine("Enter Visiting Date(DD/MM/YYYY):");
                                 DateTime dov = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
                                 d = new Doctor();
                                 List<string> timeslots = d.GetDoctorAvailableSlots(did, dov);
                                 if (timeslots.Count == 0)
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine($"No Slots Available to Book Appointment on {dov.ToString("dd/MM/yyyy")} for Doctor ID {did}");
+                                    Console.WriteLine($"No Slots Available to Book Appointment on {dov:dd/MM/yyyy} for Doctor ID {did}");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 }
                                 Console.ForegroundColor = ConsoleColor.Yellow;
-                                Console.WriteLine($"Available Timeslots for Doctor on {dov.ToString("dd/MM/yyyy")} are");
+                                Console.WriteLine($"Available Timeslots for Doctor on {dov:dd/MM/yyyy} are");
                                 for (int index = 0; index < timeslots.Count; index++)
                                 {
                                     Console.Write($"|{index + 1} - {timeslots[index]} |");
@@ -253,10 +297,11 @@ namespace Clinics
                                     for (int i = 0; i < countdown % 6 + 1; i++)
                                         Console.Write(".");
                                     Console.Write("\r");
-                                    Thread.Sleep(200);
+                                    Thread.Sleep(300);
                                 }
-                                Console.WriteLine("Congratulation, Your Appointment is booked.\n Your Appointment Details:");
+                                
                                 Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("\nCongratulation, Your Appointment is booked.\nAppointment Details are:");
                                 Console.WriteLine("***********************************");
                                 Console.WriteLine("Appointment ID:         " + a.AppointmentID.ToString());
                                 Console.WriteLine("Patient ID:             " + a.PatientID);
@@ -269,9 +314,10 @@ namespace Clinics
                                 break;
 
                             case 5:
+                                // Cancel Appointment
                                 Console.WriteLine("Enter Patient ID:");
                                 int patientid = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter Visiting Date:");
+                                Console.WriteLine("Enter Visiting Date(DD/MM/YYYY):");
                                 DateTime visitingdate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
                                 a = new Appointment();
                                 List<Appointment> allApps = a.GetAppointmentsByPatientAndDate(patientid, visitingdate);
@@ -327,11 +373,81 @@ namespace Clinics
                                     Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 }
-
-
+                                
                             case 6:
+                                Console.WriteLine("Enter Patient ID:");
+                                int patientId = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter Visiting Date(DD/MM/YYYY):");
+                                DateTime visitingDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+                                a = new Appointment();
+                                List<Appointment> allApp = a.GetAppointmentsByPatientAndDate(patientId, visitingDate);
+                                if (allApp.Count == 0)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"\nNo Appointments on {visitingDate:dd/MM/yyyy}.\n");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    break;
+                                }
+
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine($"\nAll Appointment Details of Patient ID {patientId} on {visitingDate:dd/MM/yyyy} are:");
+                                Console.WriteLine("".PadLeft(100, '-'));
+                                Console.WriteLine(String.Format("| {0,-15} | {1,-10} | {2,-10} | {3,-25} | {4,-25} |", "Appointment ID", "Patient ID", "Doctor ID", "Specialization Required", "Visit Date & Time"));
+                                Console.WriteLine("".PadLeft(100, '-'));
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("\nThank you...:)");
+                                foreach (Appointment apps in allApp)
+                                {
+                                    Console.WriteLine(String.Format("| {0,-15} | {1,-10} | {2,-10} | {3,-25} | {4,-25} |",
+                                                                    apps.AppointmentID.ToString(),
+                                                                    apps.PatientID,
+                                                                    apps.DoctorID,
+                                                                    apps.Specialization,
+                                                                    $"{apps.VisitDate:dd/MM/yyyy} at {apps.AppointmentTime}"));
+                                }
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("".PadLeft(100, '-'));
+                                Console.ForegroundColor = ConsoleColor.White;
+                                break;
+
+                            case 7:
+                                Console.WriteLine("Enter Doctor ID:");
+                                int DoctorID = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter Visiting Date(DD/MM/YYYY):");
+                                DateTime VisitingDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+                                a = new Appointment();
+                                List<Appointment> allAppbydoctor = a.GetAppointmentsByDoctorAndDate(DoctorID, VisitingDate);
+                                if (allAppbydoctor.Count == 0)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"\nNo Appointments on {VisitingDate:dd/MM/yyyy}.\n");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    break;
+                                }
+
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine($"\nAll Appointment Details of Patient ID {DoctorID} on {VisitingDate:dd/MM/yyyy} are:");
+                                Console.WriteLine("".PadLeft(100, '-'));
+                                Console.WriteLine(String.Format("| {0,-15} | {1,-10} | {2,-10} | {3,-25} | {4,-25} |", "Appointment ID", "Patient ID", "Doctor ID", "Specialization Required", "Visit Date & Time"));
+                                Console.WriteLine("".PadLeft(100, '-'));
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                foreach (Appointment apps in allAppbydoctor)
+                                {
+                                    Console.WriteLine(String.Format("| {0,-15} | {1,-10} | {2,-10} | {3,-25} | {4,-25} |",
+                                                                    apps.AppointmentID.ToString(),
+                                                                    apps.PatientID,
+                                                                    apps.DoctorID,
+                                                                    apps.Specialization,
+                                                                    $"{apps.VisitDate:dd/MM/yyyy} at {apps.AppointmentTime}"));
+                                }
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("".PadLeft(100, '-'));
+                                Console.ForegroundColor = ConsoleColor.White;
+                                break;
+
+                            case 8:
+                                // LogOut
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("\nThank you for Using...");
                                 Console.ForegroundColor = ConsoleColor.White;
                                 break;
 
@@ -349,7 +465,7 @@ namespace Clinics
                         Console.ResetColor();
                         Console.WriteLine("");
                     }
-                } while (choice != 6);
+                } while (choice != 8);
 
             }
 

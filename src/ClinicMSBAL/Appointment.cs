@@ -66,5 +66,21 @@ namespace ClinicMSBAL
             }
             return AllAppointments;
         }
+
+        public List<Appointment> GetAppointmentsByDoctorAndDate(int did, DateTime dov)
+        {
+            ManageAppointments manageAppointments = new();
+            AllAppointments = new List<Appointment>();
+            foreach (ArrayList array in manageAppointments.AppointmentListByDoctorIDAndVisitingDate(did, dov))
+            {
+                AllAppointments.Add(new Appointment(Convert.ToInt32(array[0]),
+                                          Convert.ToInt32(array[1]),
+                                          array[2].ToString(),
+                                          Convert.ToInt32(array[3]),
+                                          DateTime.Parse(array[4].ToString()),
+                                          TimeSpan.Parse(array[5].ToString())));
+            }
+            return AllAppointments;
+        }
     }
 }

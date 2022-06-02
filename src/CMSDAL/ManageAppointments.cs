@@ -55,6 +55,27 @@ namespace CMSDAL
             return Appointments;
         }
 
+        public List<ArrayList> AppointmentListByDoctorIDAndVisitingDate(int did, DateTime dov)
+        {
+            List<ArrayList> Appointments = new();
+            conn = InitiateDB();
+            cmd = new SqlCommand($"SELECT * FROM Appointments WHERE DID = {did} AND VisitDate = '{dov}'", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ArrayList arr = new();
+                arr.Add(Convert.ToInt32(reader[0]));
+                arr.Add(Convert.ToInt32(reader[1]));
+                arr.Add(reader[2].ToString());
+                arr.Add(Convert.ToInt32(reader[3]));
+                arr.Add(DateTime.Parse(reader[4].ToString()));
+                arr.Add(TimeSpan.Parse(reader[5].ToString()));
+                Appointments.Add(arr);
+            }
+            conn.Close();
+            return Appointments;
+        }
+
         public ArrayList AddNewAppointment(int Pid, string Spec, int Did, DateTime VDate, TimeSpan AppTime)
         {
             ArrayList CreatedAppointmentDetails = new();
