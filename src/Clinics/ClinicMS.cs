@@ -32,7 +32,26 @@ namespace Clinics
                     Console.WriteLine("Enter Your UserName");
                     UserName = Console.ReadLine();
                     Console.WriteLine("Enter Your Password");
-                    Password = Console.ReadLine();
+                    Console.CursorVisible = false;
+                    StringBuilder passwordBuilder = new();
+                    ConsoleKeyInfo consoleKeyInfo;
+                    while (true)
+                    {
+                        consoleKeyInfo = Console.ReadKey(true);
+                        char passwordChar = consoleKeyInfo.KeyChar;
+
+                        if (passwordChar == '\r')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            passwordBuilder.Append(passwordChar);
+                            Console.Write("*");
+                        }
+                    }
+                    Console.CursorVisible = true;
+                    Password = passwordBuilder.ToString();
                     if (Authentication.ValidateCredentials(UserName, Password))
                     {
                         break;
@@ -65,7 +84,7 @@ namespace Clinics
                     Thread.Sleep(200);
                 }
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Login Successful...");
+                Console.WriteLine("\n\nLogin Successful...");
                 Console.ForegroundColor = ConsoleColor.White;
                 Thread.Sleep(300);
                 Console.Clear();
