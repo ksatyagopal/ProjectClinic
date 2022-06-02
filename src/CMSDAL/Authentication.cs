@@ -9,6 +9,7 @@ namespace CMSDAL
 {
     public class Authentication
     {
+        //This method Verifies whether the login credentials are valid or not
         public static bool ValidateCredentials(string userName, string password)
         {
             try

@@ -27,7 +27,7 @@ namespace Clinics
                 Thread.Sleep(200);
                 Console.WriteLine("Please Login Here...");
                 Thread.Sleep(200);
-                while (true)
+                while (true)    // User Login
                 {
                     Console.WriteLine("Enter Your UserName");
                     UserName = Console.ReadLine();
@@ -118,10 +118,9 @@ namespace Clinics
                                     Console.Write("\r");
                                     Thread.Sleep(200);
                                 }
-                                Console.WriteLine("All Doctors Details Present in the Clinic.");
                                 d = new Doctor();
-
                                 Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("All Doctors Details Present in the Clinic.");
                                 Console.WriteLine("".PadLeft(110, '-'));
                                 Console.WriteLine(String.Format("| {0,-10} | {1,-30} | {2,-10} | {3,-20} | {4,-25} |", "Doctor ID", "Name", "Gender", "Specialization", "Available Time"));
                                 Console.WriteLine("".PadLeft(110, '-'));

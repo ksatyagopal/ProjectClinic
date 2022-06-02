@@ -10,6 +10,7 @@ namespace CMSDAL
         public static SqlConnection conn = null;
         public static SqlCommand cmd;
 
+        //This Method returns the All Doctor details present in Database
         public List<ArrayList> DoctorList()
         {
             List<ArrayList> doctors = new();
@@ -32,6 +33,7 @@ namespace CMSDAL
             return doctors;
         }
 
+        //This Method returns the All Doctor details present in Database basing on specialization given
         public List<ArrayList> DoctorListBySpecialization(string spec)
         {
             List<ArrayList> doctors = new();
@@ -54,6 +56,7 @@ namespace CMSDAL
             return doctors;
         }
 
+        //This Method returns the Timeslots available for Doctor
         public List<string> GetDoctorsAvailableTimeSlots(int did, DateTime VisitDate)
         {
             List<string> timeSlots = new();
@@ -72,6 +75,7 @@ namespace CMSDAL
             return timeSlots;
         } 
 
+        //This method adds the new Doctor details into database
         public ArrayList AddNewDoctor(string FName, string LName, string Gen, string Spec, TimeSpan VStart, TimeSpan VEnd)
         {
             ArrayList CreatedDoctorDetails = new();
@@ -97,6 +101,7 @@ namespace CMSDAL
             return CreatedDoctorDetails;
         }
 
+        //This method returns the Doctor Details basing on Doctor ID given
         public ArrayList GetDoctorDetails(int Doctorid)
         {
             ArrayList DoctorDetails = new();
@@ -115,6 +120,7 @@ namespace CMSDAL
             return DoctorDetails;
         }
 
+        //This initiates the connection with database and returns SqlConnection object
         private static SqlConnection InitiateDB()
         {
             try

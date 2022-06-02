@@ -34,6 +34,7 @@ namespace ClinicMSBAL
             VisitEndTime = vend;
         }
 
+        //This mehtod adds new Doctor Details into database
         public Doctor AddDoctorInDatabase(string fname, string lname, string gen, string spec, TimeSpan vstart, TimeSpan vend)
         {
             ManageDoctor manageDoctor = new ManageDoctor();
@@ -47,6 +48,7 @@ namespace ClinicMSBAL
                                TimeSpan.Parse(array[6].ToString()));
         }
 
+        //returns all the doctor details present in database
         public List<Doctor> GetAllDoctorDetails()
         {
             AllDoctors = new List<Doctor>();
@@ -64,6 +66,7 @@ namespace ClinicMSBAL
             return AllDoctors;
         }
 
+        //Returns all the Doctor details basing on Specialization Given
         public List<Doctor> GetAllDoctorDetailsBySpecialization(string spec)
         {
             AllDoctors = new List<Doctor>();
@@ -81,6 +84,7 @@ namespace ClinicMSBAL
             return AllDoctors;
         }
 
+        //Returns the Doctors Available timeslots
         public List<string> GetDoctorAvailableSlots(int did, DateTime VisitDate)
         {
             ManageDoctor manageDoctor = new();

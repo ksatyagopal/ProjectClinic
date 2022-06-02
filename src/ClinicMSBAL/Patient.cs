@@ -32,6 +32,7 @@ namespace ClinicMSBAL
             DateOfBirth = dob;
         }
 
+        //This mehtod adds new Patient Details into database
         public Patient AddPatientInDatabase(string fname, string lname, string gen, int age, DateTime dob)
         {
             ManagePatient managePatient = new ManagePatient();

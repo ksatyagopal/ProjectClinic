@@ -13,6 +13,7 @@ namespace CMSDAL
         public static SqlConnection conn = null;
         public static SqlCommand cmd;
 
+        //This returns all the patients details in database
         public List<ArrayList> PatientList()
         {
             List<ArrayList> Patients = new();
@@ -34,6 +35,7 @@ namespace CMSDAL
             return Patients;
         }
 
+        //This method adds new patient into database
         public ArrayList AddNewPatient(string FName, string LName, string Gen, int Age, DateTime DOB)
         {
             ArrayList CreatedPatientDetails = new();
@@ -58,6 +60,7 @@ namespace CMSDAL
             return CreatedPatientDetails;
         }
 
+        //This method return the Patient Details basing on Patient ID given
         public ArrayList GetPatientDetails(int Patientid)
         {
             ArrayList PatientDetails = new();
@@ -75,6 +78,7 @@ namespace CMSDAL
             return PatientDetails;
         }
 
+        //This initiates the connection with database and returns SqlConnection object
         private static SqlConnection InitiateDB()
         {
             try

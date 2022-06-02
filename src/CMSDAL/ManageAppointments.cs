@@ -13,7 +13,7 @@ namespace CMSDAL
         public static SqlConnection conn = null;
         public static SqlCommand cmd;
 
-        public List<ArrayList> AppointmentList()
+        public List<ArrayList> AppointmentList() // Returns All Appointments
         {
             List<ArrayList> Appointments = new();
             conn = InitiateDB();
@@ -34,6 +34,7 @@ namespace CMSDAL
             return Appointments;
         }
 
+        //This Menthod returns all Appointments basing on Patient and Visiting Date
         public List<ArrayList> AppointmentListByPatientIDAndVisitingDate(int pid, DateTime dov)
         {
             List<ArrayList> Appointments = new();
@@ -55,6 +56,7 @@ namespace CMSDAL
             return Appointments;
         }
 
+        //This Menthod returns all Appointments basing on Doctor and Visiting Date
         public List<ArrayList> AppointmentListByDoctorIDAndVisitingDate(int did, DateTime dov)
         {
             List<ArrayList> Appointments = new();
@@ -76,6 +78,7 @@ namespace CMSDAL
             return Appointments;
         }
 
+        //This adds new Appointment Details to database and returns those details back
         public ArrayList AddNewAppointment(int Pid, string Spec, int Did, DateTime VDate, TimeSpan AppTime)
         {
             ArrayList CreatedAppointmentDetails = new();
@@ -100,6 +103,7 @@ namespace CMSDAL
             return CreatedAppointmentDetails;
         }
 
+        //This Method Cancels the Appointment basing on Appointment ID
         public bool CancelAppointment(int AppID)
         {
             conn = InitiateDB();
@@ -114,6 +118,7 @@ namespace CMSDAL
                 return true;
         }
 
+        //This method returns the Appointment Details basing on Appointment ID
         public ArrayList GetAppointmentDetails(int Appointmentid)
         {
             ArrayList AppointmentDetails = new();
@@ -131,6 +136,7 @@ namespace CMSDAL
             return AppointmentDetails;
         }
 
+        //This initiates the connection with database and returns SqlConnection object
         private static SqlConnection InitiateDB()
         {
             try

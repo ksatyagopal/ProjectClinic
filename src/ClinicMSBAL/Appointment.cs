@@ -33,6 +33,7 @@ namespace ClinicMSBAL
             AppointmentTime = apptime;
         }
 
+        //This method add new Appointment into Database
         public Appointment AddAppointmentInDatabase(int pid, string spec, int did, DateTime vdate, TimeSpan apptime)
         {
             ManageAppointments manageAppointment = new ManageAppointments();
@@ -45,12 +46,14 @@ namespace ClinicMSBAL
                                    TimeSpan.Parse(array[5].ToString()));
         }
 
+        //This method cancels the appointment basing on Appointment ID
         public bool CancelAppointment(int AppID)
         {
             ManageAppointments manageAppointment = new();
             return manageAppointment.CancelAppointment(AppID);
         }
 
+        //Returns all the appointments basing on Patient ID and Visiting Date
         public List<Appointment> GetAppointmentsByPatientAndDate(int pid, DateTime dov)
         {
             ManageAppointments manageAppointments = new();
@@ -67,6 +70,7 @@ namespace ClinicMSBAL
             return AllAppointments;
         }
 
+        //Returns all the appointments basing on Doctor ID and Visiting Date
         public List<Appointment> GetAppointmentsByDoctorAndDate(int did, DateTime dov)
         {
             ManageAppointments manageAppointments = new();
