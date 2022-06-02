@@ -69,6 +69,9 @@
           }
         }
       },
+      "SonarAnalyzer.CSharp/8.40.0.48530": {
+        "type": "package"
+      },
       "System.Data.SqlClient/4.8.3": {
         "type": "package",
         "dependencies": {
@@ -261,6 +264,26 @@
         "version.txt"
       ]
     },
+    "SonarAnalyzer.CSharp/8.40.0.48530": {
+      "sha512": "ZxON0c0ZUF7snuaEmGWczPQ5OHyYRzCHHwZ5FlRoK4kVwqH0CawAxto8Xx8iJXb9vBX1kbVK4t14+WP4hJcuVg==",
+      "type": "package",
+      "path": "sonaranalyzer.csharp/8.40.0.48530",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/Google.Protobuf.dll",
+        "analyzers/SonarAnalyzer.CFG.dll",
+        "analyzers/SonarAnalyzer.CSharp.dll",
+        "analyzers/SonarAnalyzer.dll",
+        "images/sonarsource_64.png",
+        "license/THIRD-PARTY-NOTICES.txt",
+        "sonaranalyzer.csharp.8.40.0.48530.nupkg.sha512",
+        "sonaranalyzer.csharp.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "System.Data.SqlClient/4.8.3": {
       "sha512": "yERfVLXAY0QbylAgaGLByYN0hFxX28aeEQ0hUgJO+Ntn1AfmWl5HHUoYJA0Yl9HhIUUJHVaS/Sw/RLZr5aaC+A==",
       "type": "package",
@@ -450,6 +473,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "SonarAnalyzer.CSharp >= 8.40.0.48530",
       "System.Data.SqlClient >= 4.8.3"
     ]
   },
@@ -492,6 +516,12 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "SonarAnalyzer.CSharp": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.40.0.48530, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.3, )"

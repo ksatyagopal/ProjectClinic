@@ -31,7 +31,7 @@ BEGIN
 END
 
 -- exec AddDoctor 'satyagopal', 'kothuru', 'Male', 'General', '10:00', '13:00'
-
+-- use ClinicDB
 -- select * from Doctors
 -- select * from Patients
 -- select * from Appointments

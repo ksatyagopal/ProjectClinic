@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8RDDFqDlDxGQGvHfAlS7xce7HcA+XDWnqOd1ya1xCQK6c2i3UBg/7Lusnba0priv8uhUXJVQ5dySHHhu2vI6fQ==",
+  "dgSpecHash": "duE3lT2TvhZ93ytQL2VkFVlx3zjwMuJkqA27w+mQHiXrOYy24GNzK5dWdQm2HiGW5XYKNvxO4C/4K6c9JCyGow==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Eurofins\\CaseStudy\\ProjectClinic\\src\\Clinics\\Clinics.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\sonaranalyzer.csharp\\8.40.0.48530\\sonaranalyzer.csharp.8.40.0.48530.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
